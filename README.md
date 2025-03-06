@@ -12,8 +12,9 @@ This project uses **FastAPI** for the backend and **React** for the frontend, wi
 1. Create the python virtual environment and install the dependencies:
 
 ```bash
-uv 
-
+uv sync
+uv pip install "fastapi[standard]"
+```
 
 2. Synchronise the JavaScript dependencies and compile the jsx file:
 
