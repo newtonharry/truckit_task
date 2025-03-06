@@ -11,7 +11,7 @@ function App() {
 
     if (value.trim().length >= 3) {
       try {
-        const res = await fetch(`/autosuggest?query=${encodeURIComponent(value)}`);
+        const res = await fetch(`/autosuggest?query=${encodeURIComponent(value)}`); // NOTE:  need to encode any poential characters not compatible with the URL
         const data = await res.json();
         setResult(data.error || data.message || "");
       } catch (error) {
@@ -39,6 +39,7 @@ function App() {
         value={query}
         placeholder="Enter a food"
         onChange={handleChange}
+        // Bit of styling to make it nicer
         style={{
           width: "300px",
           padding: "8px",
