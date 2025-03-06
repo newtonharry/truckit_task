@@ -15,7 +15,7 @@ function App() {
         const data = await res.json();
         setResult(data.error || data.message || "");
       } catch (error) {
-        setResult("There was an error fetching the result.");
+        setResult(`No category found for '${value}'`);
         console.error(error);
       }
     } else {
