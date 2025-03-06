@@ -19,10 +19,12 @@ food_mappings = {
     "beef": "meat"
 }
 
+# NOTE: Serve the react app
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+# NOTE: Autocomplete 
 @app.get("/autosuggest")
 async def autosuggest(query: str = None):
     if query:
